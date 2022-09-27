@@ -1,4 +1,4 @@
 ﻿  main.cpp
-C:\Users\Daniel\Desktop\Daniel M\USA\UCSC\2022-3 (Fall)\Fundamentals of Game Engineering\Assignments\Basic paint\Basic paint\main.cpp(75,110): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Daniel\Desktop\Daniel M\USA\UCSC\2022-3 (Fall)\Fundamentals of Game Engineering\Assignments\Basic paint\Basic paint\main.cpp(75,60): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Daniel\Desktop\Daniel M\USA\UCSC\2022-3 (Fall)\Fundamentals of Game Engineering\Assignments\Basic paint\Basic paint\main.cpp(95,110): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Daniel\Desktop\Daniel M\USA\UCSC\2022-3 (Fall)\Fundamentals of Game Engineering\Assignments\Basic paint\Basic paint\main.cpp(95,60): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   Basic paint.vcxproj -> C:\Users\Daniel\Desktop\Daniel M\USA\UCSC\2022-3 (Fall)\Fundamentals of Game Engineering\Assignments\Basic paint\x64\Debug\Basic paint.exe

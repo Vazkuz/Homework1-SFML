@@ -7,6 +7,35 @@
 #include <SFML/Main.hpp>
 #include <iostream>
 
+void ChangeColor(sf::Color& brushColor)
+{
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))
+        brushColor = sf::Color::Green;
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2))
+        brushColor = sf::Color::Red;
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3))
+        brushColor = sf::Color::Blue;
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4))
+        brushColor = sf::Color::Yellow;
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num5))
+        brushColor = sf::Color::Magenta;
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num0))
+        brushColor = sf::Color::Black;
+}
+
+void ChangeShape(int& brushPointCount) {
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::C))
+        brushPointCount = 100; // Circle
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::T))
+        brushPointCount = 3; // Triangle
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+        brushPointCount = 4; // Square
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::P))
+        brushPointCount = 5; // Pentagon
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::O))
+        brushPointCount = 8; // Octagon
+}
+
 int main()
 {
     //::getFullscreenModes()[0]
@@ -16,6 +45,7 @@ int main()
 
     float brushSize = 20.f;
     float lastBrushSize = brushSize;
+    int brushPointCount = 100;
     sf::Color brushColor = sf::Color::Green;
     std::string filename = "Homework 1 Screenshot.png";
     bool isBrushOn = true;
@@ -35,18 +65,9 @@ int main()
                 if (brushSize < 0)
                     brushSize = 0;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))
-                brushColor = sf::Color::Green;
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2))
-                brushColor = sf::Color::Red;
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3))
-                brushColor = sf::Color::Blue;
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4))
-                brushColor = sf::Color::Yellow;
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num5))
-                brushColor = sf::Color::Magenta;
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num0))
-                brushColor = sf::Color::Black;
+
+            ChangeColor(brushColor);
+            ChangeShape(brushPointCount);
 
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
                 sf::Texture texture;
@@ -68,10 +89,9 @@ int main()
             }
         }
 
-        sf::CircleShape shape(brushSize);
+        sf::CircleShape shape(brushSize, brushPointCount);
         shape.setFillColor(brushColor);
-
-        //window.clear(sf::Color::White);
+        
         shape.setPosition(sf::Mouse::getPosition(window).x - brushSize /2., sf::Mouse::getPosition(window).y - brushSize / 2.);
         window.draw(shape);
         window.display();
